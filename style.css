@@ -1,0 +1,254 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 160%;
+}
+
+:root {
+    font-size: 62.5%;
+
+    --color-base-white: rgb(255, 255, 255);
+    --color-base-blue-300: rgb(17, 117, 150);
+    --color-base-blue-700: rgb(6, 94, 124);
+    --color-base-black-text: rgb(18, 18, 20);
+    --color-base-black: rgb(32, 32, 36);
+}
+
+body, html, input {
+    font-family: 'Mulish', sans-serif;
+}
+
+h2, h3 {
+    color: var(--color-base-black);
+}
+
+p {
+    color: var(--color-base-black-text);
+}
+
+
+#app {
+    height: 100vh;
+}
+
+/* header */
+
+.logo {
+    width: 4rem;
+    height: 4rem;
+}
+
+.avatar {
+    width: 4rem;
+    height: 4rem;
+}
+
+header input {
+    flex: 1;
+        padding: 1.2rem 1.6rem;
+        background-color: var(--color-base-blue-300);
+        border: .1rem solid var(--color-base-blue-700);
+        border-radius: .4rem;
+}
+
+header input::placeholder {
+    color: var(--color-base-white);
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+header {
+    background-color: var(--color-base-blue-700);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2.5rem;
+    padding: 1.6rem 2.8rem;
+}
+
+/* main */
+
+h2 {
+    font-size: 2.4rem;
+    font-weight: 700;
+}
+
+.hero-banner {
+    width: 100%;
+    border-radius: .8rem;
+}
+
+section, aside {
+    margin-left: 2.2rem;
+}
+
+main article {
+    display: flex;
+    flex-direction: column;
+    gap: 3.1rem;
+}
+
+article .heading-button {
+  margin-top: 3.1rem;  
+  margin-right: 6.6rem;
+  
+  display: flex;
+  flex-direction: column;
+  gap: .8rem;
+}
+
+main p {
+    margin-right: 2.6rem;
+    font-size: 1.6rem;
+}
+
+.btn-likes {
+    display: flex;
+    gap: 1.2rem;
+}
+
+.btn-likes button {
+    width: 4rem;
+    height: 4rem;
+    background-color: var(--color-base-blue-700);
+    border: 1px solid var(--color-base-blue-700);
+    border-radius: 99.9rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* aside */
+
+aside {
+    margin-top: 3.4rem;
+    margin-right: 2.6rem;
+
+    display: flex;
+    flex-direction: column;
+    gap: 3.2rem;
+}
+
+aside img {
+    width: 15.2rem;
+    height: 9.6rem;
+    border-radius: .5rem;
+}
+
+h3 {
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+aside p {
+    font-size: 1.4rem;
+}
+
+aside article {
+    display: flex;
+    gap: 1.6rem;
+}
+
+/* footer */
+
+footer {
+    margin-top: 3.9rem;
+    padding: 2.6rem 1.6rem;
+    background-color: var(--color-base-blue-300);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer p {
+    color: var(--color-base-white);
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+@media (min-width: 770px) {
+    article .heading-button {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+/* Update layout for screens greater than 1024px */
+@media (min-width: 1024px) {
+    #app {
+        display: grid;
+        grid-template-areas:
+            "header header"
+            "main aside"
+            "footer footer";
+        grid-template-columns: 2fr 1fr;
+        /* You can adjust the size of the aside column as needed */
+        grid-template-rows: auto 1fr auto;
+        height: 100vh;
+    }
+
+    header {
+        padding: 1.6rem 11.2rem;
+    }
+
+    header {
+        grid-area: header;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    main {
+        grid-area: main;
+        display: flex;
+        flex-direction: column;
+        gap: 3.1rem;
+        margin: 4.4rem 3.4rem 3.9rem 10.9rem;
+    }
+
+    main p {
+        margin: 0;
+    }
+
+    aside {
+        grid-area: aside;
+        display: flex;
+        flex-direction: column;
+        gap: 3.2rem;
+        margin: 4.4rem 7rem 29.5rem 0;
+    }
+
+    aside article {
+        width: 38.2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    footer {
+        grid-area: footer;
+        margin-top: 0;
+    }
+
+    main section,
+    main article {
+        margin: 0;
+    }
+
+    main .heading-button {
+        margin: 0;
+    }
+
+    .hero-banner {
+        width: 100%;
+    }
+
+    aside img {
+        width: 100%;
+        object-fit: cover;
+    }
+}
